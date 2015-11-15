@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css'/>
+  <script src="/javascripts/main.js"></script>
+</head>
+<body>
+<div class="container">
+  <header>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+  </header>
+  <div class="left">
+    <ul class="list">
+      <% music.forEach(function (name) { %>
+      <li><%= name %></li>
+      <% }) %>
+    </ul>
+  </div>
+  <div class="right"></div>
+</div>
+</body>
 </html>
