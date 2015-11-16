@@ -1,8 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+}
+
+header {
+  width: 100%;
+  border: 1px solid #000;
+  height: 150px;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 148px;
+}
+
+.left, .right {
+  min-height: 500px;
+  border: 1px solid #000;
+}
+
+.left ul {
+  margin: 8px 0 0 8px;
+}
+
+.left li {
+  padding: 3px;
+  list-style: none;
+}
+
+.left {
+  float: left;
+  width: 250px;
+}
+
+.right {
+  margin-left: 270px;
+}
+
+.active {
+  color: aqua;
 }
