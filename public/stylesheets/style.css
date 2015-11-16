@@ -24,7 +24,12 @@ header {
   height: 150px;
   margin-bottom: 20px;
   text-align: center;
-  line-height: 148px;
+  line-height: 75px;
+  overflow: hidden;
+}
+
+h1, .volume {
+  display: inline-block;
 }
 
 .left, .right {
