@@ -5,7 +5,7 @@
 function $(s) {
   return document.querySelectorAll(s);
 }
-window.onload = () => {
+window.onload = function () {
   var list = $(".list li");
   for (let i = 0; i < list.length; i++) {
     list[i].addEventListener('click', function () {
@@ -13,13 +13,13 @@ window.onload = () => {
         list[j].className = '';
       }
       this.className = 'active';
-      console.log(this.title);
       load("/media/" + this.innerText);
     });
   }
   var xhr = new XMLHttpRequest();
   var audio = new window.AudioContext();
-
+  var gainNode = audio[audio.createGain ? 'createGain' : 'createGainNode']();
+  gainNode.connect(audio.destination);
   function load(url) {
     xhr.open('GET', url);
     xhr.responseType = 'arraybuffer';
@@ -27,7 +27,7 @@ window.onload = () => {
       audio.decodeAudioData(xhr.response, function (buffer) {
         var bufferSource = audio.createBufferSource();
         bufferSource.buffer = buffer;
-        bufferSource.connect(audio.destination);
+        bufferSource.connect(gainNode);
         bufferSource[bufferSource.start ? "start" : "noteOn"]();
       }, function (err) {
         console.log(err);
@@ -35,4 +35,12 @@ window.onload = () => {
     };
     xhr.send();
   }
+
+  function adJust(persent) {
+    gainNode.gain.value = persent * persent;
+  }
+
+  $(".volume")[0].addEventListener('change', function () {
+    adJust(this.value / this.max)
+  });
 };
