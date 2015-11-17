@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
     if (err) {
       console.error(err);
     } else {
-      res.render('index', {title: 'Music Visualization', music: names});
+      res.render('index', {title: '音该如此', music: names});
     }
   });
 });
