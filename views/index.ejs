@@ -2,37 +2,26 @@
 <html>
 <head>
   <title><%= title %></title>
-  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="/bootstrap-material-design/dist/css/material.css">
   <link rel='stylesheet' href='/stylesheets/style.css'/>
-  <script src="/jquery/dist/jquery.js"></script>
-  <script src="/bootstrap-material-design/dist/js/material.js"></script>
   <script src="/javascripts/main.js"></script>
 </head>
 <body>
 <div class="container">
-  <header class="panel panel-primary">
-    <h1 class="panel-heading"><%= title %></h1>
+  <header>
+    <h1><%= title %></h1>
+
+    <p>
+      音 量 : <input class="volume" type="range" min="0" max="100" value="60"/>
+    </p>
   </header>
-  <div class="row">
-    <div class="col-md-4 panel left">
-      <div class="list-group ">
-        <% music.forEach(function (name) { %>
-        <div class="list-group-item">
-          <div class="row-action-primary">
-            <i class="mdi-image-audiotrack"></i>
-          </div>
-          <div class="row-content">
-            <div class="action-secondary"><i class="mdi-material-info"></i></div>
-            <h4 class="list-group-item-heading"><%= name %></h4>
-            <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus.</p>-->
-          </div>
-        </div>
-        <% }) %>
-      </div>
-    </div>
-    <div class="col-xs-7 right"></div>
+  <div class="left">
+    <ul class="list">
+      <% music.forEach(function (name) { %>
+      <li><%= name %></li>
+      <% }) %>
+    </ul>
   </div>
+  <div class="right"></div>
 </div>
 </body>
 </html>
