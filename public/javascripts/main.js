@@ -2,17 +2,19 @@
  * Created by GTX95017 on 2015/11/16.
  */
 'use strict';
-function $(s) {
+
+function get(s) {
   return document.querySelectorAll(s);
 }
 window.onload = function () {
-  var list = $(".list li");
+  $.material.init();
+  var list = get(".list-group-item-heading");
   for (let i = 0; i < list.length; i++) {
     list[i].addEventListener('click', function () {
       for (var j = 0; j < list.length; j++) {
-        list[j].className = '';
+        list[j].className = 'list-group-item-heading';
       }
-      this.className = 'active';
+      this.className = 'list-group-item-heading active';
       load("/media/" + this.innerText);
     });
   }
@@ -25,7 +27,7 @@ window.onload = function () {
   gainNode.connect(audio.destination);
   var canvas = document.createElement('canvas');
   var canvasContext = canvas.getContext("2d");
-  var canvasBox = $('.right')[0];
+  var canvasBox = get('.right')[0];
   canvasBox.appendChild(canvas);
   var height;
   var width;
@@ -103,8 +105,8 @@ window.onload = function () {
     gainNode.gain.value = percent * percent;
   }
 
-  $(".volume")[0].addEventListener('change', function () {
-    adJust(this.value / this.max)
-  });
-  gainNode.gain.value = $(".volume")[0].value / 100;
+  //get(".volume")[0].addEventListener('change', function () {
+  //  adJust(this.value / this.max)
+  //});
+  //gainNode.gain.value = get(".volume")[0].value / 100;
 };

@@ -1,0 +1,24 @@
+{
+  "name": "bower",
+  "description": "111",
+  "main": "",
+  "authors": [
+    "rancongjie <rancongjie@126.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/rancongjie/Visualization",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-material-design": "~0.3.0",
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5"
+  }
+}
