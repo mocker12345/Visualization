@@ -1,0 +1,24 @@
+{
+  "name": "music",
+  "description": "",
+  "main": "",
+  "authors": [
+    "rancongjie <95633676@qq.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/rancongjie/Visualization",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "bootstrap-material-design": "~0.3.0"
+  }
+}
