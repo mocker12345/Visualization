@@ -20,21 +20,10 @@ window.onload = function () {
         list[j].className = 'list-group-item-heading';
       }
       this.className = 'list-group-item-heading active';
-      //load("/media/" + this.innerText);
       music.play("/media/" + this.innerText);
     });
   }
-  //get(".volume")[0].addEventListener('change', function () {
-  //  music.changeVolume(this.value / this.max)
-  //});
-  //music.gainNode.gain.value = get(".volume")[0].value / 100;
-  //var xhr = new XMLHttpRequest();
-  //var audio = new window.AudioContext();
-  //var gainNode = audio[audio.createGain ? 'createGain' : 'createGainNode']();
-  //var analyser = audio[audio.createAnalyser ? 'createAnalyser' : 'createAnalyserNode']();
-  //analyser.fftSize = 512;
-  //analyser.connect(gainNode);
-  //gainNode.connect(audio.destination);
+
   var canvas = document.createElement('canvas');
   var canvasContext = canvas.getContext("2d");
   var canvasBox = get('.right')[0];
@@ -65,55 +54,4 @@ window.onload = function () {
       canvasContext.fillRect(w * i * 4, (height - h) * 0.5, w, h);
     }
   }
-
-  //var source = null;
-  //var count = 0;
-
-  //function load(url) {
-  //  //防止连续点击造成同时播放
-  //  var n = ++count;
-  //  //如果source已经有内容,则停止掉当前播放
-  //  source && source[source.stop ? 'stop' : 'nodeOff'](0);
-  //  //终止上一次请求
-  //  xhr.abort();
-  //  xhr.open('GET', url);
-  //  xhr.responseType = 'arraybuffer';
-  //  xhr.onload = function () {
-  //    //如果 n 不等于 count 则说明在还没有解码之前就点击了下一首歌曲
-  //    if (n !== count)return;
-  //    audio.decodeAudioData(xhr.response, function (buffer) {
-  //      if (n !== count)return;
-  //      var bufferSource = audio.createBufferSource();
-  //      bufferSource.buffer = buffer;
-  //      bufferSource.connect(analyser);
-  //      bufferSource[bufferSource.start ? "start" : "noteOn"](0);
-  //      //把bufferSource 赋值给 source,判断是否正在播放
-  //      analyserData();
-  //      source = bufferSource;
-  //    }, function (err) {
-  //      console.log(err);
-  //    });
-  //  };
-  //  xhr.send();
-  //}
-
-  //function analyserData() {
-  //  var musicArray = new Uint8Array(analyser.frequencyBinCount);
-  //  var requestAnimationFrame = window.requestAnimationFrame ||
-  //    window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
-  //
-  //  function constant() {
-  //    analyser.getByteFrequencyData(musicArray);
-  //    console.log(musicArray);
-  //    requestAnimationFrame(constant);
-  //    draw(musicArray);
-  //  }
-  //
-  //  requestAnimationFrame(constant);
-  //};
-  //function adJust(percent) {
-  //  gainNode.gain.value = percent * percent;
-  //}
-
-
 };
